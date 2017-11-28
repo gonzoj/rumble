@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -o rumble -g -Wall -I../../celt/install/include -I../../ffmpeg/install/include -I/usr/include/lua5.1 -lcrypto -lssl -lpthread -lm -lrt -lprotobuf-c -L../../celt/install/lib -Wl,-rpath -Wl,$HOME/celt/install/lib -L../../ffmpeg/install/lib -Wl,-rpath -Wl,$HOME/ffmpeg/install/lib -lavformat -lavcodec main.c net/connection.c net/message.c net/protobuf/Mumble.pb-c.c net/varint.c net/audio.c net/crypt.c celtcodec.c client.c config.c handler.c console.c plugin.c controller.c api/user.c api/channel.c api/environment.c api/sound.c api/event.c api/rumble.c -llua5.1 -Wl,-E -ldl -lavutil
